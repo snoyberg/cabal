@@ -192,7 +192,7 @@ import Distribution.Types.PackageId
 #endif
 
 #ifdef BOOTSTRAPPED_CABAL
-import qualified Paths_Cabal (version)
+import qualified Paths_Cabal_snoy (version)
 #endif
 
 import Control.Concurrent.MVar
@@ -237,7 +237,7 @@ import qualified Text.PrettyPrint as Disp
 -- We only get our own version number when we're building with ourselves
 cabalVersion :: Version
 #if defined(BOOTSTRAPPED_CABAL)
-cabalVersion = mkVersion' Paths_Cabal.version
+cabalVersion = mkVersion' Paths_Cabal_snoy.version
 #elif defined(CABAL_VERSION)
 cabalVersion = mkVersion [CABAL_VERSION]
 #else
